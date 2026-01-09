@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.9.0",
-    "generatedAt": "2026-01-09T07:29:43.997Z",
+    "version": "1.10.0",
+    "generatedAt": "2026-01-09T07:31:38.970Z",
     "templateType": "gallery_sidebar",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
@@ -470,7 +470,7 @@
   ],
   "homepage": {
     "domain": "mia-test-property.com",
-    "templateType": "gallery_sidebar",
+    "templateType": "full_banner_wipe",
     "images": [
       {
         "logo": []
