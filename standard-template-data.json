@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.5.0",
-    "generatedAt": "2026-01-09T03:03:05.470Z",
-    "templateType": "full_banner_slider_flat",
+    "version": "1.6.0",
+    "generatedAt": "2026-01-09T07:22:05.231Z",
+    "templateType": "gallery_sidebar",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
   },
@@ -470,7 +470,7 @@
   ],
   "homepage": {
     "domain": "mia-test-property.com",
-    "templateType": "full_banner_slider_flat",
+    "templateType": "gallery_sidebar",
     "images": [
       {
         "logo": []
@@ -488,8 +488,9 @@
           "sections": [
             {
               "hero": {
-                "title": "",
-                "images": []
+                "title": "테스트",
+                "images": [],
+                "description": "ㅇ"
               },
               "closing": {
                 "title": "",
@@ -575,8 +576,8 @@
           }
         },
         "color": {
-          "primary": "#f7f9fb",
-          "secondary": "#85bfc1"
+          "primary": "#F5F5F5",
+          "secondary": "#1D3A5F"
         }
       },
       "popup": {

@@ -6,6 +6,28 @@
 (function() {
     'use strict';
 
+    // Track if header and footer are both loaded
+    let headerLoaded = false;
+    let footerLoaded = false;
+
+    // Initialize mapper after both header and footer are loaded
+    async function tryInitializeMapper() {
+        if (headerLoaded && footerLoaded && window.HeaderFooterMapper) {
+            // 프리뷰 환경인지 확인 (iframe 내부)
+            const isPreview = window.parent !== window;
+
+            if (!isPreview) {
+                // 일반 페이지: 기본 데이터로 매핑
+                const mapper = new window.HeaderFooterMapper();
+                await mapper.initialize();
+
+                // 매핑 완료 후 헤더/사이드바 표시
+                if (window.showHeaders) window.showHeaders();
+            }
+            // 프리뷰 환경: PreviewHandler가 처리하므로 여기서는 매핑하지 않음
+        }
+    }
+
     // Load CSS
     function loadCSS(href) {
         const link = document.createElement('link');
@@ -20,43 +42,43 @@
             // Load header CSS first
             loadCSS('styles/header.css');
 
-            const response = await fetch('common/header.html');
+            const response = await fetch('common/header.html', { cache: 'no-cache' });
             const html = await response.text();
 
             // Create a temporary container
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
-            // Extract body content from the loaded HTML
-            const bodyContent = temp.querySelector('body');
-            if (bodyContent) {
-                // Insert header at the beginning of body
-                const header = bodyContent.querySelector('.header');
-                if (header) {
-                    document.body.insertBefore(header, document.body.firstChild);
-                }
+            // Find side header and top header directly from temp
+            const sideHeader = temp.querySelector('.side-header');
+            const topHeader = temp.querySelector('.top-header');
 
-                // Insert mobile menu after header
-                const mobileMenu = bodyContent.querySelector('.mobile-menu');
-                if (mobileMenu) {
-                    document.body.insertBefore(mobileMenu, document.body.firstChild.nextSibling);
-                }
-            } else {
-                // Fallback: try to get header directly
-                const header = temp.querySelector('.header');
-                if (header) {
-                    document.body.insertBefore(header, document.body.firstChild);
-                }
+            // Insert side header first (so it appears before top-header in DOM)
+            if (sideHeader) {
+                document.body.insertBefore(sideHeader, document.body.firstChild);
+            }
 
-                const mobileMenu = temp.querySelector('.mobile-menu');
-                if (mobileMenu) {
-                    document.body.insertBefore(mobileMenu, document.body.firstChild.nextSibling);
-                }
+            // Insert top header (hamburger-button is already inside)
+            if (topHeader) {
+                document.body.insertBefore(topHeader, document.body.firstChild);
             }
 
             // Load header JavaScript
             const script = document.createElement('script');
             script.src = 'js/common/header.js';
+            script.onload = function() {
+                // Re-initialize hamburger button after script loads
+                setTimeout(() => {
+                    const hamburgerButton = document.getElementById('hamburger-button');
+                    if (hamburgerButton && window.toggleSideHeader) {
+                        hamburgerButton.addEventListener('click', window.toggleSideHeader);
+                    }
+                }, 100);
+
+                // Mark header as loaded after script is fully loaded
+                headerLoaded = true;
+                tryInitializeMapper();
+            };
             document.body.appendChild(script);
 
             // Immediately check scroll position after header is loaded
@@ -74,7 +96,7 @@
     // Load Footer
     async function loadFooter() {
         try {
-            const response = await fetch('common/footer.html');
+            const response = await fetch('common/footer.html', { cache: 'no-cache' });
             if (response.ok) {
                 // Load footer CSS
                 loadCSS('styles/footer.css');
@@ -95,6 +117,10 @@
                 const script = document.createElement('script');
                 script.src = 'js/common/footer.js';
                 document.body.appendChild(script);
+
+                // Mark footer as loaded and try to initialize mapper
+                footerLoaded = true;
+                tryInitializeMapper();
             }
         } catch (error) {
             console.error('Error loading footer:', error);

@@ -9,8 +9,8 @@
 
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/directions.css">
-
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="미아 테스트 숙소 - 오시는길" />
@@ -25,77 +25,55 @@
   <meta name="twitter:image" content="https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/property/006ab482-8287-43c7-8277-aa2939264efa/thumbnail/1758524056630-t9o6mwn3vvn.jpg" />
 </head>
 <body>
-    <!-- Include Header -->
-    <div id="header-placeholder"></div>
 
-    <!-- 메인 소개 섹션 히어로 0번째 이미지-->
-    <section class="hero-section">
-        <div class="hero-background">
-            <img src="" alt="오시는길 배경" data-customfield-directions-hero-image-0>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text-center">
-                <h1 class="hero-title" data-directions-hero-title>LOCATION</h1>
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="main-section fullscreen-slider">
+          <div class="fullscreen-slider-container">
+            <div class="fullscreen-slider-inner" data-directions-slider>
+              <!-- 동적으로 슬라이드가 생성됩니다 -->
             </div>
-        </div>
-
-        <!-- Scroll Down Indicator -->
-        <div class="hero-scroll-down" onclick="scrollToNextSection()">
-            <svg class="scroll-arrow" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Location Info Section -->
-    <section class="location-info-section">
-        <div class="directions-content-container">
-        <!-- Facility Introduction Section -->
-        <div class="facility-intro-section">
-            <div class="facility-intro-content">
-                <div class="facility-label">
-                    <span class="facility-number" data-directions-title>LOCATION</span>
-                </div>
-                <p class="facility-description" data-directions-description>
-                    오시는 길 안내입니다.
-                </p>
-            </div>
-        </div>
-
-        <!-- Banner Image Section 히어로 1번째 이미지 -->
-        <div class="directions-banner-section">
-            <div class="container">
-                <img src="" alt="오시는길 배너" class="directions-banner-image" data-customfield-directions-hero-image-1>
-            </div>
-        </div>
-
-        <!-- 지도 섹션 -->
-        <section class="map-section main-content-fade-in">
-            <div class="container">
-                <div class="address-section">
-                    <p>
-                        <svg class="location-icon" viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span data-directions-address></span>
-                    </p>
-                    <!-- 안내사항  -->
-                     <div class="notice-wrap">
-                        <h4 data-customfield-directions-notice-title>안내사항</h4>
-                        <p data-customfield-directions-notice-description>안내사항 1</p>
-                     </div>
-                </div>
+            <div class="fullscreen-slider-content">
+              <h2 class="fullscreen-slider-title centered">Location</h2>
             </div>
 
-            <div class="container">
-                <div class="map-container">
-                    <div id="kakao-map"></div>
-                </div>
+            <div class="fullscreen-slider-nav">
+              <span class="nav-arrow nav-prev">‹</span>
+              <span class="nav-current">01</span>
+              <span class="nav-divider">|</span>
+              <span class="nav-total">03</span>
+              <span class="nav-arrow nav-next">›</span>
             </div>
+          </div>
         </section>
-        </div> <!-- directions-content-container -->
+        <div class="content-wrap">
+           <div class="about-description-wrap">
+            <!-- CUSTOM FIELD : 메인 소개 섹션 타이틀 매핑 -->
+            <h2 class="about-title animate-element" data-directions-title></h2>
+
+            <div class="location-details animate-element">
+                <div class="location-address-wrapper animate-element">
+                    <svg class="location-icon" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <!-- 숙소 주소 매핑 -->
+                    <p class="location-address" data-directions-address></p>
+                </div>
+            </div>
+            <!-- CUSTOM FIELD : 안내사항 섹션 매핑, 없으면 display none -->
+             <div class="location-note animate-element" data-directions-notes></div>
+           </div>
+
+           <!-- 지도 섹션 -->
+           <section class="map-section animate-element">
+
+               <div class="map-container animate-element">
+                   <div id="kakao-map"></div>
+               </div>
+           </section>
+        </div>
+    </main>
 
     <!-- Kakao Map SDK -->
     <script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
@@ -123,6 +101,9 @@
 
     <!-- Header and Footer Loader -->
     <script src="js/header-footer-loader.js"></script>
+
+    <!-- Fullscreen Slider Component -->
+    <script src="js/components/fullscreen-slider.js"></script>
 
     <!-- Page-specific script -->
     <script src="js/pages/directions.js"></script>

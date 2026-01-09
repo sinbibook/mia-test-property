@@ -8,11 +8,14 @@
     <title id="page-title">시설 안내 - 숙소명</title>
 
     <!-- Preload critical resources -->
+    <link rel="preload" href="styles/theme.css" as="style">
     <link rel="preload" href="styles/common.css" as="style">
     <link rel="preload" href="styles/facility.css" as="style">
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/facility.css">
+
 
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
@@ -28,110 +31,168 @@
   <meta name="twitter:image" content="https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/property/006ab482-8287-43c7-8277-aa2939264efa/thumbnail/1758524056630-t9o6mwn3vvn.jpg" />
 </head>
 <body>
-    <!-- Include Header -->
-    <div id="header-placeholder"></div>
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <!-- Hero Slider Section -->
-    <section class="hero-slider-section">
-        <div class="hero-slider" id="hero-slider">
-            <!-- Slides will be dynamically generated -->
-        </div>
-        <div class="hero-content">
-            <div class="hero-text-center">
-                <h1 class="hero-title" data-facility-hero-page-title></h1>
+        <section class="main-section fullscreen-slider">
+          <div class="fullscreen-slider-container">
+            <div class="fullscreen-slider-inner">
+              <!-- 시설 이미지 전체 순서대로 매핑 -->
             </div>
-        </div>
-        <!-- Slider Progress -->
-        <div class="hero-slider-progress">
-            <div class="hero-slider-nav">
-                <button class="hero-slider-arrow prev" id="hero-prev"></button>
-                <span class="hero-slider-current" id="hero-current">01</span>
-                <div class="hero-slider-line">
-                    <div class="hero-slider-line-fill" id="hero-progress-fill"></div>
-                </div>
-                <span class="hero-slider-total" id="hero-total">05</span>
-                <button class="hero-slider-arrow next" id="hero-next"></button>
+            <!-- 하드코딩 fix! -->
+            <div class="fullscreen-slider-content">
+              <h2 class="fullscreen-slider-title centered">Special</h2>
             </div>
-        </div>
-    </section>
 
-    <!-- Main Content Section -->
-    <section class="main-content-section main-content-fade-in">
-        <div class="facility-content-container">
-        <!-- Facility Introduction Section -->
-        <div class="facility-intro-section">
-            <div class="facility-intro-content">
-                <div class="facility-label">
-                    <span id="facility-number" class="facility-number">SPECIAL 01</span>
-                </div>
-                <h1 id="facility-title" class="facility-title" data-facility-name></h1>
-                <div class="facility-description">
-                    <pre data-facility-description></pre>
-                </div>
-                <div class="facility-text-content usage-guide">
-                    <div class="facility-text-header">
-                        <h3 class="facility-section-title">이용 안내</h3>
+            <div class="fullscreen-slider-nav">
+              <span class="nav-arrow nav-prev">‹</span>
+              <span class="nav-current">01</span>
+              <span class="nav-divider">|</span>
+              <span class="nav-total">03</span>
+              <span class="nav-arrow nav-next">›</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="content-wrap">
+
+            <div class="facility-intro-section">
+                <div class="facility-intro-content">
+                    <div class="facility-label">
+                        <!-- 시설명 매핑 -->
+                        <span class="facility-name" data-facility-title></span>
                     </div>
-                    <div class="facility-text-body" data-facility-features-container>
+                    <!-- 시설 설명 매핑 -->
+                    <p class="facility-description" data-facility-description></p>
+                </div>
+            </div>
+            <section class="facility-info-section">
+                <div class="facility-info-container">
+                    <div class="facility-info-content">
+                        <div class="facility-info-left">
+                          <!-- 시설 이미지 슬라이더랑 안겹치게 매핑 -->
+                            <div class="facility-info-image">
+                                <img src="" alt="">
+                                <!-- 하드코딩 fix! -->
+                                <h2 class="facility-info-title">Usage Guide</h2>
+                            </div>
+                        </div>
+                        <div class="facility-info-right">
+                            <div class="facility-info-text-content">
+
+                                <div class="facility-info-details">
+                                    <!-- CUSTOM FIELD 시설설명 1순위 > 숙소설정 시설설명 2순위 -->
+                                    <div class="facility-detail-section">
+                                        <h3 class="facility-detail-title">이용안내</h3>
+                                        <div class="facility-content-text" data-facility-usage-guide></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- 주요 특징 섹션 custom field -->
-        <div class="facility-content-section">
-            <div class="facility-image-content">
-                <img src="" alt="Facility View" class="facility-content-img" data-facility-features-image>
-            </div>
-            <!-- 임시 주석 처리 -->
-            <div class="facility-text-content">
-                <!-- <div class="facility-text-header">
-                    <h3 class="facility-section-title">주요 특징</h3>
+            <!-- CUSTOM FIELD : 이용안내 섹션 / 내용 없을 시 Display: none -->
+            <section class="facility-info-section facility-info-section-reversed">
+                <div class="facility-info-container">
+                    <div class="facility-info-content">
+                       <!-- 시설 이미지 슬라이더랑 안겹치게 매핑 : 이용안내 섹션 내용 있을때만 보여야 함 -->
+                        <div class="facility-info-left">
+                            <div class="facility-info-image">
+                                <img src="" alt="">
+                                <h2 class="facility-info-title">Additional Info</h2>
+                            </div>
+                        </div>
+                        <div class="facility-info-right">
+                            <div class="facility-info-text-content">
+                                <div class="facility-info-details">
+                                    <!-- 주요특징 섹션 -->
+                                    <div class="facility-detail-section">
+                                        <h3 class="facility-detail-title">주요특징</h3>
+                                        <div class="facility-features-list" data-facility-features></div>
+                                    </div>
+
+                                    <!-- 추가정보 섹션 -->
+                                    <div class="facility-detail-section">
+                                        <h3 class="facility-detail-title">추가정보</h3>
+                                        <div class="facility-additional-info-list" data-facility-additional-info></div>
+                                    </div>
+
+                                    <!-- 이용혜택 섹션 -->
+                                    <div class="facility-detail-section">
+                                        <h3 class="facility-detail-title">이용혜택</h3>
+                                        <div class="facility-benefits-list" data-facility-benefits></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="facility-text-body" data-facility-features-container>
-                </div> -->
-            </div>
+            </section>
         </div>
 
-        <!-- 추가 정보 섹션 custom field -->
-        <div class="facility-content-section facility-content-reversed">
-            <div class="facility-image-content">
-                <img src="" alt="Facility View" class="facility-content-img" data-facility-additionalinfos-image>
-            </div>
-            <!-- 임시 주석 처리 -->
-            <div class="facility-text-content">
-                <!-- <div class="facility-text-header">
-                    <h3 class="facility-section-title">추가 정보</h3>
+        <!-- 숙소 영문명 매핑-->
+            <div class="marquee-section">
+                <div class="marquee-container">
+                <div class="marquee-text"></div>
                 </div>
-                <div class="facility-text-body" data-facility-additionalinfos-container>
-                </div> -->
             </div>
-        </div>
+        <!-- 숙소 외경 이미지 1번쨰 매핑 -->
+      <section class="full-banner"></section>
 
-        <!-- 이용 혜택 섹션 custom field -->
-        <div class="facility-content-section">
-            <div class="facility-image-content">
-                <img src="" alt="Facility View" class="facility-content-img" data-facility-benefits-image>
-            </div>
-            <!-- 임시 주석 처리 -->
-            <div class="facility-text-content">
-                <!-- <div class="facility-text-header">
-                    <h3 class="facility-section-title">이용 혜택</h3>
+      <div class="content-wrap">
+        <!-- 시설 이미지 갤러리형 : 4장 fix , 이미지, 이미지설명 매핑 -->
+        <section class="facility-gallery-section">
+          <div class="facility-gallery-container">
+            <div class="gallery-column">
+              <div class="gallery-item">
+                <div class="gallery-item-image">
+                  <img src="" alt="">
                 </div>
-                <div class="facility-text-body" data-facility-benefits-container>
-                </div> -->
+                <div class="gallery-item-content">
+                  <h3 class="gallery-item-title"></h3>
+                </div>
+              </div>
+
+              <div class="gallery-item">
+                <div class="gallery-item-image">
+                  <img src="" alt="">
+                </div>
+                <div class="gallery-item-content">
+                  <h3 class="gallery-item-title"></h3>
+                </div>
+              </div>
             </div>
-        </div>
-        </div> <!-- facility-content-container -->
-    </section>
 
+            <div class="gallery-column">
+              <div class="gallery-item">
+                <div class="gallery-item-image">
+                  <img src="" alt="">
+                </div>
+                <div class="gallery-item-content">
+                  <h3 class="gallery-item-title"></h3>
+                </div>
+              </div>
 
+              <div class="gallery-item">
+                <div class="gallery-item-image">
+                  <img src="" alt="">
+                </div>
+                <div class="gallery-item-content">
+                  <h3 class="gallery-item-title"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <!-- Include ImageWithFallback script -->
     <script src="js/image-with-fallback.js"></script>
 
-    <!-- Common Slider Module -->
-    <script src="js/common/slider.js"></script>
 
     <!-- Image Helpers -->
     <script src="js/image-helpers.js"></script>
@@ -150,6 +211,9 @@
 
     <!-- Header and Footer Loader -->
     <script src="js/header-footer-loader.js"></script>
+
+    <!-- Fullscreen Slider Component -->
+    <script src="js/components/fullscreen-slider.js"></script>
 
     <!-- Page-specific script -->
     <script src="js/pages/facility.js"></script>
