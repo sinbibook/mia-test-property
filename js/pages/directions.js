@@ -1,77 +1,68 @@
-/**
- * Directions Page JavaScript
- */
+// Directions Page with Slider and Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Note: Slider는 directions-mapper.js의 reinitializeSlider()에서 초기화됨
 
-(function() {
-    'use strict';
+    // Initialize location notes with icons
+    initializeLocationNotes();
 
+    // Initialize scroll animations
+    setupScrollAnimations();
+});
 
-    // Scroll to next section function (no parallax)
-    function scrollToNextSection() {
-        const mapSection = document.querySelector('.map-section');
+// 위치 안내 사항을 아이콘과 함께 동적으로 생성
+window.initializeLocationNotes = function initializeLocationNotes() {
+    const noteElement = document.querySelector('[data-directions-notes]');
+    if (!noteElement) return;
 
-        if (mapSection) {
-            const targetPosition = mapSection.offsetTop;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
+    // 텍스트 내용을 가져와서 줄바꿈으로 분할
+    const noteText = noteElement.textContent.trim();
+    if (!noteText) {
+        noteElement.style.display = 'none';
+        return;
     }
 
-    // Make function globally available
-    window.scrollToNextSection = scrollToNextSection;
+    const noteLines = noteText.split('\n').filter(line => line.trim() !== '');
 
-    // Dynamic notice section visibility
-    function toggleNoticeSection() {
-        const noticeSection = document.getElementById('directions-notice-section');
+    // 새로운 HTML 구조 생성 (각 아이템에 애니메이션 지연 시간 추가)
+    const noteItemsHTML = noteLines.map((line, index) => {
+        const delay = 1.0 + (index * 0.15); // 1.0s, 1.15s, 1.3s 순차 지연
+        return `
+            <div class="note-item animate-element" style="transition-delay: ${delay}s;">
+                ${line.trim()}
+            </div>
+        `;
+    }).join('');
 
-        // noticeSection이 없으면 함수 종료
-        if (!noticeSection) return;
+    // 기존 내용을 새로운 구조로 교체
+    noteElement.innerHTML = noteItemsHTML;
 
-        const noticeContent = noticeSection.querySelector('[data-customfield-directions-notice-content]');
+    // 새로 생성된 요소들을 애니메이션 시스템에 다시 등록
+    setTimeout(() => {
+        setupScrollAnimations();
+    }, 100);
+}
 
-        // Check if data exists (not empty or default content)
-        const hasContent = noticeContent && noticeContent.textContent.trim() &&
-                          !noticeContent.textContent.includes('안내사항이 표시됩니다.');
+// 스크롤 애니메이션 설정
+window.setupScrollAnimations = function setupScrollAnimations() {
+    const animateElements = document.querySelectorAll('.animate-element');
 
-        if (hasContent) {
-            noticeSection.style.display = 'block';
-        } else {
-            noticeSection.style.display = 'none';
-        }
-    }
+    function checkScroll() {
+        animateElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
 
-    // Image animation using IntersectionObserver
-    function initImageAnimation() {
-        const bannerImage = document.querySelector('.directions-banner-image');
-
-        if (!bannerImage) return;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // 뷰포트에 들어오면 'animate' 클래스를 추가하고, 나가면 제거합니다.
-                entry.target.classList.toggle('animate', entry.isIntersecting);
-            });
-        }, {
-            threshold: 0.1 // 10% 이상 보일 때 트리거
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animate');
+            }
         });
-
-        observer.observe(bannerImage);
     }
 
-    // Initialize when DOM is ready
-    document.addEventListener('DOMContentLoaded', async function() {
-        // Initialize DirectionsMapper for data mapping
-        if (typeof DirectionsMapper !== 'undefined') {
-            const directionsMapper = new DirectionsMapper();
-            await directionsMapper.initialize(); // initialize()가 자동으로 mapPage() 호출
-        }
+    // 초기 실행
+    checkScroll();
 
-        // Simple initialization - no parallax effects
-        toggleNoticeSection();
-        initImageAnimation();
-        console.log('Directions page loaded');
-    });
+    // 스크롤 이벤트
+    window.addEventListener('scroll', checkScroll);
 
-})();
+    // 리사이즈 이벤트
+    window.addEventListener('resize', checkScroll);
+}
