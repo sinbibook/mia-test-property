@@ -8,8 +8,15 @@ class BaseDataMapper {
         this.data = null;
         this.isDataLoaded = false;
         this.animationObserver = null;
-    }
 
+        // ========================================
+        // 📌 전역 JSON 파일 설정 (한 곳에서만 변경)
+        // ========================================
+        // 테스트할 때: 'demo-filled.json' (실제 데이터가 들어있는 파일)
+        // 실제 상용할 때: 'standard-template-data.json' (빈 템플릿)
+
+        this.dataSource = 'standard-template-data.json';  // ← 여기만 변경하면 전체 페이지 적용!
+    }
     // ============================================================================
     // 🔧 CORE UTILITIES
     // ============================================================================
@@ -39,15 +46,28 @@ class BaseDataMapper {
         try {
             // 캐시 방지를 위한 타임스탬프 추가
             const timestamp = new Date().getTime();
-            const response = await fetch(`./standard-template-data.json?t=${timestamp}`);
+            const response = await fetch(`./${this.dataSource}?t=${timestamp}`);
             const rawData = await response.json();
 
             // 스네이크 케이스를 카멜 케이스로 자동 변환
             this.data = this.convertToCamelCase(rawData);
             this.isDataLoaded = true;
+            console.log(`Data loaded from: ${this.dataSource}`);
+
+            // 데이터 소스에 따라 이미지 폴백 처리 설정
+            // demo-filled.json: JSON 이미지만 사용 (폴백 없음)
+            // standard-template-data.json: image-helpers의 폴백 이미지 사용
+            if (this.dataSource === 'demo-filled.json') {
+                window.useImageHelpersFallback = false;
+                console.log('Image fallback disabled - using demo data images only');
+            } else {
+                window.useImageHelpersFallback = true;
+                console.log('Image fallback enabled - using image-helpers for empty data');
+            }
+
             return this.data;
         } catch (error) {
-            console.error('Failed to load property data:', error);
+            console.error(`Failed to load property data from ${this.dataSource}:`, error);
             this.isDataLoaded = false;
             throw error;
         }
@@ -150,38 +170,6 @@ class BaseDataMapper {
         // 먼저 HTML 특수 문자를 이스케이프 처리한 후 줄바꿈 변환
         const escapedText = this._escapeHTML(trimmedText);
         return escapedText.replace(/\n/g, '<br>');
-    }
-
-    // ============================================================================
-    // 🖼️ IMAGE UTILITIES
-    // ============================================================================
-
-    /**
-     * Feature 코드에 따른 고품질 이미지 URL 반환
-     */
-    getFeatureImage(code) {
-        const imageMap = {
-            'WIFI': 'https://images.unsplash.com/photo-1606868306217-dbf5046868d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aWZpJTIwY29ubmVjdGlvbiUyMG1vZGVybnxlbnwwfHx8fDE3NTUwNjU4OTh8MA&ixlib=rb-4.1.0&q=80&w=800',
-            'LAUNDRY': 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXVuZHJ5JTIwZmFjaWxpdHklMjBtb2Rlcm58ZW58MHx8fHwxNzU1MDY1ODk4fDA&ixlib=rb-4.1.0&q=80&w=800',
-            'KITCHEN': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwbW9kZXJuJTIwZGVzaWduJTIwcGVuc2lvbnxlbnwwfHx8fDE3NTUwNjU4OTh8MA&ixlib=rb-4.1.0&q=80&w=800',
-            'BARBECUE': 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZWN1ZSUyMGdyaWxsJTIwb3V0ZG9vciUyMGdyaWxsaW5nfGVufDB8fHx8MTc1NTA2NTg5OHww&ixlib=rb-4.1.0&q=80&w=800',
-            'SPA': 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjByZWxheCUyMGx1eHVyeSUyMHdlbGxuZXNzfGVufDB8fHx8MTc1NTA2NTg5OHww&ixlib=rb-4.1.0&q=80&w=800'
-        };
-        return imageMap[code] || null;
-    }
-
-    /**
-     * 편의시설별 설명 반환
-     */
-    getAmenityDescription(code) {
-        const descriptions = {
-            'WIFI': '고속 무선 인터넷 서비스',
-            'LAUNDRY': '24시간 이용 가능한 세탁 서비스',
-            'KITCHEN': '완비된 주방 시설',
-            'BARBECUE': '야외 바베큐 그릴',
-            'SPA': '힐링과 휴식을 위한 스파 시설'
-        };
-        return descriptions[code] || '';
     }
 
     // ============================================================================
@@ -346,19 +334,6 @@ class BaseDataMapper {
         }
     }
 
-    // ============================================================================
-    // 🧹 CLEANUP
-    // ============================================================================
-
-    /**
-     * 리소스 정리
-     */
-    cleanup() {
-        if (this.animationObserver) {
-            this.animationObserver.disconnect();
-            this.animationObserver = null;
-        }
-    }
 }
 
 // ES6 모듈 및 글로벌 노출
