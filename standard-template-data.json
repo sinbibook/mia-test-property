@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.8.0",
-    "generatedAt": "2026-01-09T07:27:23.264Z",
+    "version": "1.9.0",
+    "generatedAt": "2026-01-09T07:29:43.997Z",
     "templateType": "gallery_sidebar",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
@@ -493,20 +493,24 @@
                 "description": "ㅇㅇㅇㅇㅇㅇㅇ"
               },
               "closing": {
-                "title": "",
-                "images": []
+                "title": "ㄹㄹㄹㄹㄹ",
+                "images": [],
+                "description": "ㄹㄹㄹㄹㄹ"
               },
               "essence": {
-                "title": "",
-                "images": []
+                "title": "ㅁㅁㅁㅁㅁ",
+                "images": [],
+                "description": "ㅁㅁㅁㅁㅁ"
               },
               "gallery": {
-                "title": "",
-                "images": []
+                "title": "ㅇㅇㅇㅇㅇ",
+                "images": [],
+                "description": "ㅇㅇㅇㅇㅇ"
               },
               "signature": {
-                "title": "",
-                "images": []
+                "title": "ㄴㄴㄴㄴㄴ",
+                "images": [],
+                "description": "ㄴㄴㄴㄴㄴ"
               }
             }
           ]
