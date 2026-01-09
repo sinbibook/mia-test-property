@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.6.0",
-    "generatedAt": "2026-01-09T07:22:05.231Z",
+    "version": "1.7.0",
+    "generatedAt": "2026-01-09T07:25:07.239Z",
     "templateType": "gallery_sidebar",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
@@ -490,7 +490,7 @@
               "hero": {
                 "title": "테스트",
                 "images": [],
-                "description": "ㅇ"
+                "description": "ㅇㅇㅇㅇㅇㅇㅇ"
               },
               "closing": {
                 "title": "",
@@ -605,6 +605,7 @@
           }
         ]
       }
-    }
+    },
+    "id": "07259936-daf1-45c2-ba70-1bb13621388c"
   }
 }
