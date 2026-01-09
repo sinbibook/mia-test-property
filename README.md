@@ -1,1 +1,1 @@
-# mia-test-property
+# template-full-banner-slider-flat Template
