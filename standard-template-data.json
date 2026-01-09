@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "generatedAt": "2026-01-09T02:00:27.941Z",
+    "version": "1.1.0",
+    "generatedAt": "2026-01-09T02:04:15.473Z",
     "templateType": "fullpage_scroll",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
@@ -570,7 +570,7 @@
               }
             ],
             "slider": false,
-            "enabled": false,
+            "enabled": true,
             "endDate": null,
             "sortOrder": 0,
             "startDate": null,
