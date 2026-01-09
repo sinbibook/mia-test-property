@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.4.0",
-    "generatedAt": "2026-01-09T02:38:37.159Z",
-    "templateType": "fullpage_scroll",
+    "version": "1.5.0",
+    "generatedAt": "2026-01-09T03:03:05.470Z",
+    "templateType": "full_banner_slider_flat",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "07259936-daf1-45c2-ba70-1bb13621388c"
   },
@@ -553,6 +553,32 @@
           ]
         }
       },
+      "theme": {
+        "font": {
+          "koSub": {
+            "cdn": "https://fonts.cdnfonts.com/css/noto-serif-kr",
+            "key": "notoserifKR",
+            "woff2": null,
+            "family": "Noto Serif KR"
+          },
+          "enMain": {
+            "cdn": "https://fonts.cdnfonts.com/css/rughato-wacner",
+            "key": "rughatowacner",
+            "woff2": null,
+            "family": "UGHATO WACNER"
+          },
+          "koMain": {
+            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
+            "key": "pretendard",
+            "woff2": null,
+            "family": "Pretendard"
+          }
+        },
+        "color": {
+          "primary": "#f7f9fb",
+          "secondary": "#85bfc1"
+        }
+      },
       "popup": {
         "popups": [
           {
@@ -577,34 +603,7 @@
             "description": ""
           }
         ]
-      },
-      "theme": {
-        "font": {
-          "koSub": {
-            "cdn": "https://fonts.cdnfonts.com/css/noto-serif-kr",
-            "key": "notoserifKR",
-            "woff2": null,
-            "family": "Noto Serif KR"
-          },
-          "enMain": {
-            "cdn": "https://fonts.cdnfonts.com/css/rughato-wacner",
-            "key": "rughatowacner",
-            "woff2": null,
-            "family": "UGHATO WACNER"
-          },
-          "koMain": {
-            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
-            "key": "pretendard",
-            "woff2": null,
-            "family": "Pretendard"
-          }
-        },
-        "color": {
-          "primary": "#F5F5F5",
-          "secondary": "#5C82B4"
-        }
       }
-    },
-    "id": "07259936-daf1-45c2-ba70-1bb13621388c"
+    }
   }
 }

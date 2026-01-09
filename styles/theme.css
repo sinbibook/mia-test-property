@@ -1,23 +1,13 @@
-/* Theme CSS - 테마 변수 정의 (폰트, 색상) */
-/* 배포 시 이 파일만 덮어쓰면 됨 */
+/* CDN Fonts */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css');
+@import url('https://fonts.cdnfonts.com/css/noto-serif-kr');
+@import url('https://fonts.cdnfonts.com/css/rughato-wacner');
 
-/* ===================================
-   CDN Fonts
-   =================================== */
-@import url('https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css');
-@import url('https://fonts.googleapis.com/css2?family=Chonburi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
-
-/* ===================================
-   CSS Variables
-   =================================== */
+/* CSS Variables */
 :root {
-    /* 색상 */
-    --color-primary: #f8f8f8;
-    --color-secondary: #1a1a1a;
-
-    /* 폰트 */
-    --font-ko-main: 'MaruBuri', sans-serif;
-    --font-ko-sub: 'Noto Serif KR', serif;
-    --font-en-main: 'Chonburi', serif;
+  --font-ko-main: 'Pretendard', sans-serif;
+  --font-ko-sub: 'Noto Serif KR', sans-serif;
+  --font-en-main: 'UGHATO WACNER', sans-serif;
+  --color-primary: #f7f9fb;
+  --color-secondary: #85bfc1;
 }
