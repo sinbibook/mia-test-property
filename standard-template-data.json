@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "generatedAt": "2026-01-12T05:58:56.034Z",
+    "version": "1.1.0",
+    "generatedAt": "2026-01-12T06:16:07.191Z",
     "templateType": "center_slider",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
@@ -470,7 +470,7 @@
   ],
   "homepage": {
     "domain": "mia-test-property.com",
-    "templateType": "center_slider",
+    "templateType": "full_banner_image",
     "images": [
       {
         "logo": [
@@ -497,23 +497,63 @@
             {
               "hero": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "a1db0f40-6261-407e-9b07-19cdf1f3ec36",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_hero/1768198560485-rlu5yy8ssoi.jpg",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "closing": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "93f6a7be-c0ab-4de4-97ed-ab47b2648980",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_closing/1768198560486-3av2evg0erq.jpg",
+                    "sortOrder": 4,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "essence": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "431ad2cb-d082-43e4-af21-1924abbfd4f6",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_essence/1768198560486-igxlk1qgi2b.png",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "gallery": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "81af7207-a203-49c6-99b9-b3cab99fc4bf",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_gallery/1768198560486-hymf149kyo.png",
+                    "sortOrder": 2,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "signature": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "8103923e-f8b6-450b-a694-24c7cda8c9bd",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_signature/1768198560486-8sdgszano4c.png",
+                    "sortOrder": 3,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               }
             }
           ]
