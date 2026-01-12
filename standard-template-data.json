@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.2.0",
-    "generatedAt": "2026-01-12T06:17:26.277Z",
+    "version": "1.3.0",
+    "generatedAt": "2026-01-12T06:18:58.032Z",
     "templateType": "full_banner_image",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
@@ -513,7 +513,7 @@
                   {
                     "id": "93f6a7be-c0ab-4de4-97ed-ab47b2648980",
                     "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_closing/1768198560486-3av2evg0erq.jpg",
-                    "sortOrder": 4,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   }
@@ -525,7 +525,7 @@
                   {
                     "id": "431ad2cb-d082-43e4-af21-1924abbfd4f6",
                     "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_essence/1768198560486-igxlk1qgi2b.png",
-                    "sortOrder": 1,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   }
@@ -537,7 +537,7 @@
                   {
                     "id": "81af7207-a203-49c6-99b9-b3cab99fc4bf",
                     "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_gallery/1768198560486-hymf149kyo.png",
-                    "sortOrder": 2,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   }
@@ -549,7 +549,7 @@
                   {
                     "id": "8103923e-f8b6-450b-a694-24c7cda8c9bd",
                     "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/index_signature/1768198560486-8sdgszano4c.png",
-                    "sortOrder": 3,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   }
@@ -610,10 +610,10 @@
             "family": "Noto Serif KR"
           },
           "enMain": {
-            "cdn": "https://fonts.googleapis.com/css2?family=Chonburi&display=swap",
-            "key": "chonburi",
+            "cdn": "https://fonts.cdnfonts.com/css/bruno-ace-2",
+            "key": "brunoace",
             "woff2": null,
-            "family": "Chonburi"
+            "family": "Bruno Ace"
           },
           "koMain": {
             "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
@@ -742,6 +742,7 @@
           "images": []
         }
       ]
-    }
+    },
+    "id": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
   }
 }
