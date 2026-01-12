@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.1.0",
-    "generatedAt": "2026-01-12T06:16:07.191Z",
-    "templateType": "center_slider",
+    "version": "1.2.0",
+    "generatedAt": "2026-01-12T06:17:26.277Z",
+    "templateType": "full_banner_image",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
   },
@@ -601,31 +601,6 @@
           ]
         }
       },
-      "popup": {
-        "popups": [
-          {
-            "id": "8b217f8e-de6a-42a4-94d2-6383aa7c9caf",
-            "link": "",
-            "title": "ㅎㅎ",
-            "images": [
-              {
-                "id": "8e84bf17-33f4-44f7-9639-2352ce1760b9",
-                "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/popup/1768197495634-hrb1zeo4rz9.png",
-                "sortOrder": 0,
-                "description": "",
-                "isSelected": true,
-                "blockId": "8b217f8e-de6a-42a4-94d2-6383aa7c9caf"
-              }
-            ],
-            "slider": false,
-            "enabled": false,
-            "endDate": null,
-            "sortOrder": 0,
-            "startDate": null,
-            "description": "ㅎㅎㅎ"
-          }
-        ]
-      },
       "theme": {
         "font": {
           "koSub": {
@@ -651,6 +626,31 @@
           "primary": "#e8ebe6",
           "secondary": "#7a8471"
         }
+      },
+      "popup": {
+        "popups": [
+          {
+            "id": "8b217f8e-de6a-42a4-94d2-6383aa7c9caf",
+            "link": "",
+            "title": "ㅎㅎ",
+            "images": [
+              {
+                "id": "8e84bf17-33f4-44f7-9639-2352ce1760b9",
+                "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/popup/1768197495634-hrb1zeo4rz9.png",
+                "sortOrder": 0,
+                "description": "",
+                "isSelected": true,
+                "blockId": "8b217f8e-de6a-42a4-94d2-6383aa7c9caf"
+              }
+            ],
+            "slider": false,
+            "enabled": false,
+            "endDate": null,
+            "sortOrder": 0,
+            "startDate": null,
+            "description": "ㅎㅎㅎ"
+          }
+        ]
       },
       "property": {
         "images": [
@@ -742,7 +742,6 @@
           "images": []
         }
       ]
-    },
-    "id": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
+    }
   }
 }
