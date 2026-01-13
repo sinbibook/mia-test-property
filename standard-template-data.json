@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.3.0",
-    "generatedAt": "2026-01-12T06:18:58.032Z",
+    "version": "1.4.0",
+    "generatedAt": "2026-01-13T05:04:10.634Z",
     "templateType": "full_banner_image",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
@@ -241,28 +241,32 @@
     },
     {
       "id": "0bad1c2e-4ab4-4312-bca1-41a8e6266261",
-      "name": "이미지 테스트",
-      "description": "ㅁ",
-      "roomInfo": "roomInfo 변경 테스트",
+      "name": "객실타입2",
+      "description": "ㅁ1",
+      "roomInfo": "roomInfo 변경 테스트1",
       "group": null,
       "size": 1,
       "baseOccupancy": 1,
       "maxOccupancy": 1,
       "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
+        "bedroom": 1,
+        "bathroom": 1,
         "livingRoom": 0
       },
       "bedTypes": [
+        "킹 베드",
         "이불"
       ],
       "amenities": [
+        "침대",
         "헤어드라이어"
       ],
       "roomViews": [
-        "오션뷰"
+        "오션뷰",
+        "마운틴뷰"
       ],
       "roomStructures": [
+        "복층",
         "로프트"
       ],
       "status": "active",
@@ -275,6 +279,13 @@
               "sortOrder": 0,
               "description": "point3d-commercial-imaging-ltd-5eCmN54oSII-unsplash.jpg",
               "isSelected": true
+            },
+            {
+              "id": "e0ea2d9e-7d0a-40e9-b2b2-9d5f75f40713",
+              "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/roomtype/0bad1c2e-4ab4-4312-bca1-41a8e6266261/thumbnail/1768213238023-i5o1gntrzj.png",
+              "sortOrder": 0,
+              "description": "",
+              "isSelected": false
             }
           ],
           "interior": [
@@ -300,12 +311,12 @@
       "displayOrder": 1
     },
     {
-      "id": "ea1cb3ed-3b5e-46bd-8f9f-aa07e14b1162",
-      "name": "1-1",
+      "id": "cf5f5a46-e618-4fe8-8cb2-a27ed31ee2f2",
+      "name": "객실타입3",
       "description": "",
       "roomInfo": "",
       "group": null,
-      "size": 0,
+      "size": 123,
       "baseOccupancy": 1,
       "maxOccupancy": 1,
       "totalRoomCount": {
@@ -320,152 +331,28 @@
       "status": "active",
       "images": [
         {
-          "thumbnail": [],
+          "thumbnail": [
+            {
+              "id": "3ee426bc-d04d-41cb-a8d7-e0ed6fb3e78a",
+              "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/roomtype/cf5f5a46-e618-4fe8-8cb2-a27ed31ee2f2/thumbnail/1768280574874-h7ogbtpmjb.png",
+              "sortOrder": 0,
+              "description": "6ccd2d72f92ca93bc95018a7f91653b87e6f47a71c79378b48860ead6a12bf11.png",
+              "isSelected": true
+            }
+          ],
           "interior": [],
-          "exterior": []
+          "exterior": [
+            {
+              "id": "5a3c6e32-22c3-4f16-8184-f7737c5266f2",
+              "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/roomtype/cf5f5a46-e618-4fe8-8cb2-a27ed31ee2f2/exterior/1768280574874-b4dx96nwttn.png",
+              "sortOrder": 0,
+              "description": "6ccd2d72f92ca93bc95018a7f91653b87e6f47a71c79378b48860ead6a12bf11.png",
+              "isSelected": true
+            }
+          ]
         }
       ],
       "displayOrder": 2
-    },
-    {
-      "id": "3a4fcf1a-8f04-427e-8de7-5bc381e698f5",
-      "name": "1-2",
-      "description": "",
-      "roomInfo": "",
-      "group": null,
-      "size": 0,
-      "baseOccupancy": 1,
-      "maxOccupancy": 1,
-      "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
-        "livingRoom": 0
-      },
-      "bedTypes": [],
-      "amenities": [],
-      "roomViews": [],
-      "roomStructures": [],
-      "status": "active",
-      "images": [
-        {
-          "thumbnail": [],
-          "interior": [],
-          "exterior": []
-        }
-      ],
-      "displayOrder": 3
-    },
-    {
-      "id": "e97c5555-2555-471f-823d-cae8efec0a6b",
-      "name": "2-2",
-      "description": "",
-      "roomInfo": "",
-      "group": null,
-      "size": 0,
-      "baseOccupancy": 1,
-      "maxOccupancy": 1,
-      "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
-        "livingRoom": 0
-      },
-      "bedTypes": [],
-      "amenities": [],
-      "roomViews": [],
-      "roomStructures": [],
-      "status": "active",
-      "images": [
-        {
-          "thumbnail": [],
-          "interior": [],
-          "exterior": []
-        }
-      ],
-      "displayOrder": 4
-    },
-    {
-      "id": "b02cef1e-7f73-473c-b84a-3a716e65d4b9",
-      "name": "2-1",
-      "description": "",
-      "roomInfo": "",
-      "group": null,
-      "size": 0,
-      "baseOccupancy": 1,
-      "maxOccupancy": 1,
-      "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
-        "livingRoom": 0
-      },
-      "bedTypes": [],
-      "amenities": [],
-      "roomViews": [],
-      "roomStructures": [],
-      "status": "active",
-      "images": [
-        {
-          "thumbnail": [],
-          "interior": [],
-          "exterior": []
-        }
-      ],
-      "displayOrder": 5
-    },
-    {
-      "id": "2f353cd1-62ae-46a4-bc25-0acb68a29fa6",
-      "name": "2-3",
-      "description": "",
-      "roomInfo": "",
-      "group": null,
-      "size": 0,
-      "baseOccupancy": 1,
-      "maxOccupancy": 1,
-      "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
-        "livingRoom": 0
-      },
-      "bedTypes": [],
-      "amenities": [],
-      "roomViews": [],
-      "roomStructures": [],
-      "status": "active",
-      "images": [
-        {
-          "thumbnail": [],
-          "interior": [],
-          "exterior": []
-        }
-      ],
-      "displayOrder": 6
-    },
-    {
-      "id": "32eb5be9-4a51-44cf-afb7-057acca777a7",
-      "name": "테테테",
-      "description": "",
-      "roomInfo": "",
-      "group": null,
-      "size": 1,
-      "baseOccupancy": 1,
-      "maxOccupancy": 1,
-      "totalRoomCount": {
-        "bedroom": 0,
-        "bathroom": 0,
-        "livingRoom": 0
-      },
-      "bedTypes": [],
-      "amenities": [],
-      "roomViews": [],
-      "roomStructures": [],
-      "status": "active",
-      "images": [
-        {
-          "thumbnail": [],
-          "interior": [],
-          "exterior": []
-        }
-      ],
-      "displayOrder": 7
     }
   ],
   "homepage": {
@@ -718,27 +605,7 @@
           "images": []
         },
         {
-          "id": "ea1cb3ed-3b5e-46bd-8f9f-aa07e14b1162",
-          "images": []
-        },
-        {
-          "id": "3a4fcf1a-8f04-427e-8de7-5bc381e698f5",
-          "images": []
-        },
-        {
-          "id": "e97c5555-2555-471f-823d-cae8efec0a6b",
-          "images": []
-        },
-        {
-          "id": "b02cef1e-7f73-473c-b84a-3a716e65d4b9",
-          "images": []
-        },
-        {
-          "id": "2f353cd1-62ae-46a4-bc25-0acb68a29fa6",
-          "images": []
-        },
-        {
-          "id": "32eb5be9-4a51-44cf-afb7-057acca777a7",
+          "id": "cf5f5a46-e618-4fe8-8cb2-a27ed31ee2f2",
           "images": []
         }
       ]
