@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.4.0",
-    "generatedAt": "2026-01-13T05:04:10.634Z",
+    "version": "1.5.0",
+    "generatedAt": "2026-01-16T08:19:07.740Z",
     "templateType": "full_banner_image",
     "propertyId": "006ab482-8287-43c7-8277-aa2939264efa",
     "homepageId": "d6e0452b-2bdf-4ae0-82d2-49841a948428"
@@ -131,11 +131,18 @@
       {
         "thumbnail": [
           {
+            "id": "2cc326c4-0197-48f9-abd6-d2e1d020c26b",
+            "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/property/006ab482-8287-43c7-8277-aa2939264efa/thumbnail/1768549159014-pr9i14mv9g.jpg",
+            "sortOrder": 1,
+            "description": "",
+            "isSelected": true
+          },
+          {
             "id": "4f8b17d5-b79f-42ab-b9d9-f16f34e3f097",
             "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/property/006ab482-8287-43c7-8277-aa2939264efa/thumbnail/1758524056630-t9o6mwn3vvn.jpg",
             "sortOrder": 0,
             "description": "",
-            "isSelected": true
+            "isSelected": false
           }
         ],
         "exterior": [
@@ -450,7 +457,15 @@
             {
               "hero": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "2d29e0f4-23f5-4434-9cca-e2ba3ddae551",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/directions_hero/1768551543178-mzsuqotq0qk.png",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "notice": {
                 "title": "",
@@ -464,7 +479,15 @@
             {
               "hero": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "d87afcbc-6cc8-4e7c-8153-892ac8cfa4f2",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/main_hero/1768551543178-hx35ahvlv8q.png",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "about": []
             }
@@ -477,11 +500,27 @@
             {
               "hero": {
                 "title": "",
-                "images": []
+                "images": [
+                  {
+                    "id": "76d4c1c8-9d7e-4c72-969a-6c93a7e95083",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/reservation_hero/1768551543178-12n1upg1wzja.png",
+                    "sortOrder": 2,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ]
               },
               "about": {
                 "title": "",
-                "images": [],
+                "images": [
+                  {
+                    "id": "323cdaca-67c8-43c0-8aa0-772419d24629",
+                    "url": "https://nbuihqqrvgfuwjxgbdym.supabase.co/storage/v1/object/public/app-images/homepage/d6e0452b-2bdf-4ae0-82d2-49841a948428/reservation_about/1768551543178-vr4atgbhhp.png",
+                    "sortOrder": 3,
+                    "description": "",
+                    "isSelected": true
+                  }
+                ],
                 "description": ""
               }
             }
